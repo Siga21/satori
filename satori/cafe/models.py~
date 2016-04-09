@@ -6,12 +6,6 @@ from django.core.urlresolvers import reverse
 
 # Create your models here.
 
-class zonas(models.Model):
-	zona = models.CharField(max_length=50)
-
-	def __unicode__(self):
-		return self.zona
-
 class locales(models.Model):
     local = models.CharField(max_length=75)
 	telefono = models.CharField(max_lenght=15)
@@ -29,25 +23,15 @@ class locales(models.Model):
     fecha_alta = models.DateTimeField(default=datetime.now, blank=True)
 	fecha_ultima = models.DateTimeField(default=datetime.now, blank=True)
     es_siga = models.BooleanField(null=True, blank=True)
-	observaciones = models.TextField(default=None, null=True)
+	observaciones = 
 
+    autor = models.ForeignKey(autores, default=None, null=True, blank=True)
+    lector = models.ForeignKey(lectores, default=None, null=True, blank=True)
+    fecha = models.DateTimeField(default=datetime.now, blank=True)
+    puntuacion =  models.PositiveIntegerField(null=True, blank=True)
+    isbn = models.CharField(max_length=75)
+    portada = models.ImageField(upload_to='imagenes', blank=True)
+    
     def __unicode__(self):
-    	return self.local
-
-class tipos_tareas(models.Model):
-	tipo = models.CharField(max_length=75)
-
-	def __unicode__(self):
-		return self.tipo
-
-
-class tareas(models.Model):
-	tarea = models.ForeignKey(tipos_tareas, default=None, null=True, blank=True)
-	local = models.ForeignKey(locales, default=None, null=True, blank=True)
-	fecha = models.DateTimeField(default=datetiem.now, blank=True)
-	completada = models.booleanField(null=True, blank=True)
-    observaciones = models.TextField(default=None, null=True)
-
-    def __unicode__(self):
-    	return self.tarea
+    	return self.titulo
 
