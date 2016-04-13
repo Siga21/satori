@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{%   load   staticfiles   %}
+
+{% block elcss %}
+<!--<link   rel="stylesheet"   type="text/css"   href="{%   static  'clinica/css/pacientes.css'   %}"   />-->
+{% endblock %}
+{% block titulo %}
+Lista de Tareas de hoy
+{% endblock %}
+{% block content %}
+<row>
+	<div class="col-md-3">
+		<a href="/paciente/agregar" class="btn btn-primary btn-lg btn-block">Nueva Tarea</a>
+		<a href="/pacientes_buscar" class="btn btn-primary btn-lg btn-block">Buscar Local</a>
+	</div>
+	<div class="col-md-9" >
+		<div class="panel panel-default">
+			<div class="panel-heading">Tareas</div>
+			<div class ="panel-body">
+				{% if object_list %}
+				<div class="table-responsive">
+				<table class="table table-striped">
+					<th>Tarea</th>
+					<th>Local</th>
+					<th>Fecha</th>
+					<th>Completada</th>
+					<th>Observaciones</th>
+          {% for tareas  in object_list %}
+						<tr>
+							<td>{{ tareas.tarea }}</td>
+							<td>{{ tareas.local }}</td>
+							<td>{{ tareas.fecha }}</td>							
+							<td>{{ tareas.completada }}</td>							
+							<td>{{ tareas.observaciones }}</td>							
+						</tr>	
+					{% endfor %}
+				  </table>
+				</div>
+		    {% else %}
+        	<p class="text-warning">No hay tareas para hoy.</p>
+        {% endif %}
+			</div>
+		</div>
+	</div>
+</row>
+<row>
+	<div class="col-md-9 col-md-offset-3">
+		<nav>
+			<ul class="pager">
+				{% if page_obj.has_previous %}
+				<li class="previus"><a href="?page={{ page_obj.previous_page_number }}"><spam aria-hideen="true">&larr;</spam>Anterior</a></li>
+				{%endif%}
+				<li> Pagina {{ page_obj.number }} de {{ paginator.num_pages }}.</li>
+				{% if page_obj.has_next %}
+				<li class="next"><a href="?page={{ page_obj.next_page_number }}">Siguiente<spam aria-hideen="true">&rarr;</spam></a></li>
+				{%endif%}
+			</ul>
+		</nav>
+	</div>
+</row>
+
+{% endblock %}

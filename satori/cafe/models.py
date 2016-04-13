@@ -44,10 +44,10 @@ class tipos_tareas(models.Model):
 	tipo = models.CharField(max_length=75)
 
 	class Meta:
-		verbose_name_plural = "tipos_tareas"
+		verbose_name_plural = "Tipos_tareas"
 
 	def __unicode__(self):
-		return selt.tipo
+		return self.tipo
 
 class tareas(models.Model):
     tarea = models.ForeignKey(tipos_tareas, default=None, null=True, blank=True)
@@ -60,5 +60,5 @@ class tareas(models.Model):
 	    verbose_name_plural = "tareas"
 
     def __unicode__(self):
-    	return self.tarea
+    	return self.observaciones
 
