@@ -15,22 +15,20 @@ Lista de Tareas de hoy
 	</div>
 	<div class="col-md-9" >
 		<div class="panel panel-default">
-			<div class="panel-heading">Tareas</div>
+			<div class="panel-heading">Tareas de hoy sin completar</div>
 			<div class ="panel-body">
 				{% if object_list %}
 				<div class="table-responsive">
 				<table class="table table-striped">
 					<th>Tarea</th>
 					<th>Local</th>
-					<th>Fecha</th>
-					<th>Completada</th>
+					<th>Hora</th>
 					<th>Observaciones</th>
           {% for tareas  in object_list %}
 						<tr>
 							<td>{{ tareas.tarea }}</td>
 							<td>{{ tareas.local }}</td>
-							<td>{{ tareas.fecha }}</td>							
-							<td>{{ tareas.completada }}</td>							
+							<td>{{ tareas.fecha | date:"H:i" }}</td>							
 							<td>{{ tareas.observaciones }}</td>							
 						</tr>	
 					{% endfor %}

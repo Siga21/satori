@@ -10,7 +10,7 @@ class ListaTareas(ListView):
     fintime = datetime.strptime('2359','%H%M').time()
     principio = datetime.combine(datetime.today(), initime)
     fin = datetime.combine(datetime.today(), fintime)
-    queryset = tareas.objects.filter(fecha__gte = principio, fecha__lte = fin).order_by('fecha')
+    queryset = tareas.objects.filter(fecha__gte = principio, fecha__lte = fin, completada = False).order_by('fecha')
     context_object_name = 'titulos'
     paginate_by = 8
 
