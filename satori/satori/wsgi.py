@@ -11,7 +11,7 @@ import os,sys
 
 sys.path.append("/home/roca67/satori/satori")
 #os.environ['DJANGO_SETTINGS_MODULE'] = 'indice.settings'
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "satori.settings")
+os.environ["DJANGO_SETTINGS_MODULE"] = "satori.settings"
 
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
