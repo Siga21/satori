@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{%   load   staticfiles   %}
+
+{% block elcss %}
+<!-- <link   rel="stylesheet"   type="text/css"   href="{%   static  'clinica/css/pacientes_detalle.css'   %}"   /> -->
+{% endblock %}
+{% block titulo %}
+Detalle del local
+{% endblock %}
+{% block content %}
+<row>
+	<div class="col-md-3">
+		<a href="/sala/agregar" class="btn btn-primary btn-lg btn-block">Nueva</a>
+		<a href="/sala/editar/{{ salas.id }}/" class="btn btn-warning btn-lg btn-block">Modificar</a>
+		<a href="/sala/borrar/{{ salas.id }}/" class="btn btn-danger btn-lg btn-block">Borrar</a>
+	</div>
+	<div class="col-md-6">
+		<span>{{ locales.local | capfirst}}</span><br />
+        <span>{{ locales.telefono}}</span><br />
+	</div>
+</row>
+{% endblock %}

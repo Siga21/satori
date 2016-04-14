@@ -19,3 +19,6 @@ class ListaLocales(ListView):
     context_object_name = 'locales'
     paginate_by = 8
     
+class DetalleLocales(DetailView):
+    model = locales
+

@@ -19,12 +19,13 @@ from django.views.static import serve
 from django.contrib import admin
 from django.conf import settings
 from cafe import views
-from cafe.views import ListaTareas, ListaLocales
+from cafe.views import ListaTareas, ListaLocales, DetalleLocales
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', ListaTareas.as_view(), name='ListaTareas'),
     url(r'^locales/', ListaLocales.as_view(), name='ListaLocales'),
+    url(r'^locales_detalle/(?P<pk>[0-9]+)/$', DetalleLocales.as_view(), name = 'Locales_Detalle'),
 ]
 
 if settings.DEBUG:
