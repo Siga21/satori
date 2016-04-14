@@ -14,4 +14,8 @@ class ListaTareas(ListView):
     context_object_name = 'titulos'
     paginate_by = 8
 
-
+class ListaLocales(ListView):
+    queryset = locales.objects.order_by('local')
+    context_object_name = 'locales'
+    paginate_by = 8
+    
