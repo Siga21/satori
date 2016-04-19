@@ -15,8 +15,70 @@ Detalle del local
 		<a href="/sala/borrar/{{ salas.id }}/" class="btn btn-danger btn-lg btn-block">Borrar</a>
 	</div>
 	<div class="col-md-6">
-		<span>{{ locales.local | capfirst}}</span><br />
-        <span>{{ locales.telefono}}</span><br />
-	</div>
+		<div class="panel panel-primary">
+		   <div class="panel-heading">Información del local</div>
+		   <div class="panel-body">
+				<div class="table-responsive">
+					<table class="table table-striped">
+						<tr>
+							<td class="text text-primary"><spam class="glyphicon glyphicon-cutlery"></spam>      Local</td>
+                     <td><strong>{{ locales.local}}</strong></td>
+						</tr>	
+						<tr>
+							<td class="text text-primary"><span class="glyphicon glyphicon-user"></span> Contacto</td>
+                     <td><strong>{{ locales.contacto}}</strong></td>
+						</tr>	
+						<tr>
+							<td class="text text-primary"><span class="glyphicon glyphicon-home"></span>  Dirección </td>
+                     <td>{{ locales.direccion}}</td>
+						</tr>	
+						<tr>
+							<td class="text text-primary"></td>
+                     <td>{{ locales.poblacion}}, {{locales.codigo_postal }}  ( {{ locales.provincia }} )</td>
+						</tr>	
+						<tr>
+							<td class="text text-primary"><span class="glyphicon glyphicon-phone-alt"></span>  Teléfono</td>
+                     <td>{{ locales.telefono}}</td>
+						</tr>	
+						<tr>
+							<td class="text text-primary"><span class="glyphicon glyphicon-phone"></span>   Móvil</td>
+                     <td>{{ locales.movil}}</td>
+						</tr>	
+						<tr>
+							<td class="text text-primary"> <span class="glyphicon glyphicon-envelope"></span>   Correo</td>
+                     <td>{{ locales.correo}}</td>
+						</tr>	
+						<tr>
+							<td class="text text-primary"> <span class="glyphicon glyphicon-globe"></span>   Zona</td>
+                     <td>{{ locales.zona}}</td>
+						</tr>	
+						<tr>
+							<td class="text text-primary"> <span class="glyphicon glyphicon-copyright-mark"></span>   Máquina</td>
+                     <td>{{ locales.maquina}}</td>
+						</tr>	
+						<tr>
+							<td class="text text-primary"> <span class="glyphicon glyphicon-registration-mark"></span>   Modelo</td>
+                     <td>{{ locales.modelo}}</td>
+						</tr>	
+						<tr>
+							<td class="text text-primary"> <span class="glyphicon glyphicon-hdd"></span>   Centralita</td>
+                     <td>{{ locales.centralita}}</td>
+						</tr>	
+						<tr>
+							<td class="text text-primary"> <span class="glyphicon glyphicon-calendar"></span>   Fecha Alta</td>
+                     <td>{{ locales.fecha_alta}}</td>
+						</tr>	
+						<tr>
+							<td class="text text-primary"> <span class="glyphicon glyphicon-calendar"></span>   Fecha Ultima</td>
+                     <td>{{ locales.fecha_ultima}}</td>
+						</tr>	
+						<tr>
+							<td class="text text-primary"> <span class="glyphicon glyphicon-thumbs-up"></span>   es SIGA</td>
+                     <td>{{ locales.es_siga}}</td>
+						</tr>	
+				  </table>
+				</div>  
+			</div>
+		</div>
 </row>
 {% endblock %}
