@@ -11,7 +11,7 @@ class ListaTareas(ListView):
     principio = datetime.combine(datetime.today(), initime)
     fin = datetime.combine(datetime.today(), fintime)
     queryset = tareas.objects.filter(fecha__gte = principio, fecha__lte = fin, completada = False).order_by('fecha')
-    context_object_name = 'titulos'
+    context_object_name = 'tareas'
     paginate_by = 8
 
 class ListaLocales(ListView):
@@ -21,4 +21,15 @@ class ListaLocales(ListView):
     
 class DetalleLocales(DetailView):
     model = locales
+
+class ListaZonas(ListView):
+	queryset = zonas.objects.order_by('id')
+	context_object_name = 'zonas'
+	paginate_by = 8
+
+class ListaDeTareas(ListView):
+	queryset = tareas.objects.order_by('-fecha')
+	context_object_name = 'tareas'
+	paginated_by = 8
+
 
