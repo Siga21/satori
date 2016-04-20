@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{%   load   staticfiles   %}
+
+{% block elcss %}
+<!-- <link   rel="stylesheet"   type="text/css"   href="{%   static  'clinica/css/index.css'   %}"   />-->
+{% endblock %}
+{% block titulo %} Inicio {% endblock %}
+{% block content %}
+<row>
+	<div class="col-md-3">
+		<a href="/paciente/agregar" class="btn btn-primary btn-lg btn-block">Nuevo Paciente</a>
+		<a href="/pacientes" class="btn btn-primary btn-lg btn-block">Pacientes</a>
+		<a href="/calendario" class="btn btn-primary btn-lg btn-block">Calendario</a>
+		<br />
+    </div>
+    <div class="col-md-9" >
+	    <div class="panel panel-default">
+ 		 	<div class="panel-heading">Tareas de Hoy</div>
+         <div class="panel-body">
+         	{% if las_tareas %}
+					  <div class="table-responsive">
+         		<table class="table table-striped">
+	                <th>Tarea</th>
+					<th>Local</th>
+					<th>Hora</th>
+					<th>Observaciones</th>
+                  {% for tareas in las_tareas %}
+                  	<tr>
+                  		<td>{{ tareas.tarea }}</td>
+						<td>{{ tareas.local }}</td>
+						<td>{{ tareas.fecha | date:"H:i" }}</td>							
+						<td>{{ tareas.observaciones }}</td>	
+                    </tr>
+                  {% endfor %}
+            </table>
+					</div>
+				{% else %}
+					<p class="text-warning">Sin tareas para hoy</p>
+				{% endif %}
+         </div>
+         </div>
+       </div>
+    </div>
+</row>
+{% endblock %}

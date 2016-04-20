@@ -5,7 +5,7 @@
 <!--<link   rel="stylesheet"   type="text/css"   href="{%   static  'clinica/css/pacientes.css'   %}"   />-->
 {% endblock %}
 {% block titulo %}
-Lista de Tareas de hoy
+Lista de Tareas
 {% endblock %}
 {% block content %}
 <row>
@@ -15,7 +15,7 @@ Lista de Tareas de hoy
 	</div>
 	<div class="col-md-9" >
 		<div class="panel panel-default">
-			<div class="panel-heading">Tareas de hoy sin completar</div>
+			<div class="panel-heading">Tareas</div>
 			<div class ="panel-body">
 				{% if object_list %}
 				<div class="table-responsive">
@@ -35,7 +35,7 @@ Lista de Tareas de hoy
 				  </table>
 				</div>
 		    {% else %}
-        	<p class="text-warning">No hay tareas para hoy.</p>
+        	<p class="text-warning">No hay tareas.</p>
         {% endif %}
 			</div>
 		</div>

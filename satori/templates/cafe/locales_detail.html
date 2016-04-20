@@ -14,7 +14,7 @@ Detalle del local
 		<a href="/sala/editar/{{ salas.id }}/" class="btn btn-warning btn-lg btn-block">Modificar</a>
 		<a href="/sala/borrar/{{ salas.id }}/" class="btn btn-danger btn-lg btn-block">Borrar</a>
 	</div>
-	<div class="col-md-6">
+	<div class="col-md-9">
 		<div class="panel panel-primary">
 		   <div class="panel-heading">Información del local</div>
 		   <div class="panel-body">
@@ -30,11 +30,7 @@ Detalle del local
 						</tr>	
 						<tr>
 							<td class="text text-primary"><span class="glyphicon glyphicon-home"></span>  Dirección </td>
-                     <td>{{ locales.direccion}}</td>
-						</tr>	
-						<tr>
-							<td class="text text-primary"></td>
-                     <td>{{ locales.poblacion}}, {{locales.codigo_postal }}  ( {{ locales.provincia }} )</td>
+                     <td>{{ locales.direccion}} - {{ locales.poblacion}}, {{locales.codigo_postal }}  ( {{ locales.provincia }} ) </td>
 						</tr>	
 						<tr>
 							<td class="text text-primary"><span class="glyphicon glyphicon-phone-alt"></span>  Teléfono</td>
