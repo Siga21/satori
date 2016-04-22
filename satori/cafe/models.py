@@ -8,6 +8,7 @@ from django.core.urlresolvers import reverse
 
 class zonas(models.Model):
 	zona = models.CharField(max_length=50)
+	provincia = models.CharField(max_length=75, default='Pontevedra')
 
 	class Meta:
 		verbose_name_plural = "zonas"

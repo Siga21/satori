@@ -22,10 +22,12 @@ Lista de Zonas geográficas
 				<table class="table table-striped">
 					<th>id</th>
 					<th>Zona</th>
+					<th>Provincia</th>
           {% for zonas  in object_list %}
 						<tr>
 							<td>{{ zonas.id }}</td>
 							<td>{{ zonas.zona }}</td>
+							<td>{{ zonas.provincia }}</td>
 						</tr>
 					{% endfor %}
 				  </table>
