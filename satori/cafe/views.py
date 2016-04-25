@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from datetime import datetime, timedelta
 from django.utils import timezone
-from cafe.models import zonas, locales, tipos_tareas, tareas
+from cafe.models import zonas, locales, tipos_tareas, tareas, provincias
 # Create your views here.
 def index(request):
     initime = datetime.strptime('0000','%H%M').time()

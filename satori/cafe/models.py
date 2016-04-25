@@ -63,3 +63,14 @@ class tareas(models.Model):
     def __unicode__(self):
     	return self.observaciones
 
+class provincias(models.Model):
+	numero = models.PositiveIntegerField(null=True, blank=True)
+	provincia = models.CharField(max_length=100)
+
+	class Meta:
+		verbose_name_plural = "provincias"
+
+	def __unicode__(self):
+		return self.provincia
+
+
