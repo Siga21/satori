@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{%   load   staticfiles   %}
+
+{% block elcss %}
+<!-- <link   rel="stylesheet"   type="text/css"   href="{%   static  'clinica/css/pacientes_detalle.css'   %}"   /> -->
+{% endblock %}
+{% block titulo %}
+Detalle de la Tarea
+{% endblock %}
+{% block content %}
+<row>
+	<div class="col-md-3">
+		<a href="/sala/agregar" class="btn btn-primary btn-lg btn-block">Nueva</a>
+		<a href="/sala/editar/{{ salas.id }}/" class="btn btn-warning btn-lg btn-block">Modificar</a>
+		<a href="/sala/borrar/{{ salas.id }}/" class="btn btn-danger btn-lg btn-block">Borrar</a>
+	</div>
+	<div class="col-md-9">
+		<div class="panel panel-primary">
+		   <div class="panel-heading">Información de la Tarea</div>
+		   <div class="panel-body">
+				<div class="table-responsive">
+					<table class="table table-striped">
+						<tr>
+							<td class="text text-primary"><spam class="glyphicon glyphicon-wrench"></spam>      Tarea</td>
+                     <td><strong>{{ tareas.tarea }}</strong></td>
+						</tr>	
+						<tr>
+							<td class="text text-primary"><span class="glyphicon glyphicon-home"></span>   Local</td>
+                     <td><strong>{{ tareas.local }}</strong></td>
+						</tr>	
+						<tr>
+							<td class="text text-primary"><span class="glyphicon glyphicon-calendar"></span>  Fecha </td>
+                     <td>{{ tareas.fecha }} </td>
+						</tr>	
+						<tr>
+							<td class="text text-primary"><span class="glyphicon glyphicon-ok"></span>  Completada</td>
+                     <td>{{ tareas.completada}}</td>
+						</tr>	
+						<tr>
+							<td class="text text-primary"><span class="glyphicon glyphicon-search"></span>   Observaciones</td>
+                     <td>{{ tareas.observaciones}}</td>
+						</tr>	
+				  </table>
+				</div>  
+			</div>
+		</div>
+</row>
+{% endblock %}

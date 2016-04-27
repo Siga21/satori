@@ -22,15 +22,19 @@ Lista de Tareas
 				<table class="table table-striped">
 					<th>Tarea</th>
 					<th>Local</th>
-					<th>Hora</th>
+					<th>Fecha</th>
 					<th>Observaciones</th>
           {% for tareas  in object_list %}
-						<tr>
-							<td>{{ tareas.tarea }}</td>
-							<td>{{ tareas.local }}</td>
-							<td>{{ tareas.fecha | date:"H:i" }}</td>							
-							<td>{{ tareas.observaciones }}</td>							
-						</tr>	
+          				{% if tareas.completada %}
+							<tr class="success">
+						{% else %}
+							<tr class="danger">
+						{% endif %}	
+								<td><a href="/tareas_detalle/{{tareas.id}}/"><spam class="text text-primary">{{ tareas.tarea}}</spam></a></td>
+								<td>{{ tareas.local }}</td>
+								<td>{{ tareas.fecha | date:"SHORT_DATE_FORMAT"  }}</td>							
+								<td>{{ tareas.observaciones }}</td>							
+							</tr>	
 					{% endfor %}
 				  </table>
 				</div>

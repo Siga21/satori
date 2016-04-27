@@ -5,10 +5,20 @@ from datetime import datetime
 from django.core.urlresolvers import reverse
 
 # Create your models here.
+class provincias(models.Model):
+	numero = models.PositiveIntegerField(null=True, blank=True)
+	provincia = models.CharField(max_length=100)
 
+	class Meta:
+		verbose_name_plural = "provincias"
+
+	def __unicode__(self):
+		return self.provincia
+		
+		
 class zonas(models.Model):
 	zona = models.CharField(max_length=50)
-	provincia = models.CharField(max_length=75, default='Pontevedra')
+	provincia = models.ForeignKey(provincias, default='36', null=True, blank=True)
 
 	class Meta:
 		verbose_name_plural = "zonas"
@@ -25,7 +35,7 @@ class locales(models.Model):
     direccion = models.CharField(max_length=100)
     codigo_postal = models.CharField(max_length=7)
     poblacion = models.CharField(max_length=100)
-    provincia = models.CharField(max_length=100)
+#   provincia = models.CharField(max_length=100)
     zona = models.ForeignKey(zonas, default=None, null=True, blank=True)
     maquina = models.CharField(max_length=100)
     modelo = models.CharField(max_length=100)
@@ -63,14 +73,6 @@ class tareas(models.Model):
     def __unicode__(self):
     	return self.observaciones
 
-class provincias(models.Model):
-	numero = models.PositiveIntegerField(null=True, blank=True)
-	provincia = models.CharField(max_length=100)
 
-	class Meta:
-		verbose_name_plural = "provincias"
-
-	def __unicode__(self):
-		return self.provincia
 
 

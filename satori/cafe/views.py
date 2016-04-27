@@ -31,4 +31,6 @@ class ListaTareas(ListView):
 	context_object_name = 'tareas'
 	paginated_by = 8
 
+class DetalleTareas(DetailView):
+    model = tareas
 
