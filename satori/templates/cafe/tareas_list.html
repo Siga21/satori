@@ -10,7 +10,7 @@ Lista de Tareas
 {% block content %}
 <row>
 	<div class="col-md-3">
-		<a href="/paciente/agregar" class="btn btn-primary btn-lg btn-block">Nueva Tarea</a>
+		<a href="/tareas_agregar" class="btn btn-primary btn-lg btn-block">Nueva Tarea</a>
 		<a href="/pacientes_buscar" class="btn btn-primary btn-lg btn-block">Buscar Local</a>
 	</div>
 	<div class="col-md-9" >
@@ -29,12 +29,12 @@ Lista de Tareas
 							<tr class="success">
 						{% else %}
 							<tr class="danger">
-						{% endif %}	
+						{% endif %}
 								<td><a href="/tareas_detalle/{{tareas.id}}/"><spam class="text text-primary">{{ tareas.tarea}}</spam></a></td>
 								<td>{{ tareas.local }}</td>
-								<td>{{ tareas.fecha | date:"SHORT_DATE_FORMAT"  }}</td>							
-								<td>{{ tareas.observaciones }}</td>							
-							</tr>	
+								<td>{{ tareas.fecha | date:"SHORT_DATE_FORMAT"  }}</td>
+								<td>{{ tareas.observaciones }}</td>
+							</tr>
 					{% endfor %}
 				  </table>
 				</div>

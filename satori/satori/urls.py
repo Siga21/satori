@@ -20,6 +20,7 @@ from django.contrib import admin
 from django.conf import settings
 from cafe import views
 from cafe.views import ListaTareas, ListaLocales, DetalleLocales, ListaZonas, DetalleTareas
+from cafe.forms import CrearTarea
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -29,6 +30,7 @@ urlpatterns = [
     url(r'^locales_detalle/(?P<pk>[0-9]+)/$', DetalleLocales.as_view(), name = 'Locales_Detalle'),
     url(r'^tareas/', ListaTareas.as_view(), name='ListaTareas'),
     url(r'^tareas_detalle/(?P<pk>[0-9]+)/$', DetalleTareas.as_view(), name = 'Tareas_Detalle'),
+    url(r'^tareas_agregar/$', CrearTarea.as_view(), name='AgregarTarea'),
 ]
 
 if settings.DEBUG:

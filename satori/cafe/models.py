@@ -14,8 +14,8 @@ class provincias(models.Model):
 
 	def __unicode__(self):
 		return self.provincia
-		
-		
+
+
 class zonas(models.Model):
 	zona = models.CharField(max_length=50)
 	provincia = models.ForeignKey(provincias, default='36', null=True, blank=True)
@@ -64,7 +64,7 @@ class tareas(models.Model):
     tarea = models.ForeignKey(tipos_tareas, default=None, null=True, blank=True)
     local = models.ForeignKey(locales, default=None, null=True, blank=True)
     fecha = models.DateTimeField(default=datetime.now, blank=True)
-    completada = models.BooleanField(null=False, blank=True)
+    completada = models.BooleanField(null=False, blank=True, default=False)
     observaciones = models.TextField(default=None, null=True)
 
     class Meta:
@@ -73,6 +73,5 @@ class tareas(models.Model):
     def __unicode__(self):
     	return self.observaciones
 
-
-
-
+	def get_absolute_url(self):
+		return reverse('index')

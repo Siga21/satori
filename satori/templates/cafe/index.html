@@ -8,8 +8,8 @@
 {% block content %}
 <row>
 	<div class="col-md-3">
-		<a href="/paciente/agregar" class="btn btn-primary btn-lg btn-block">Nuevo Paciente</a>
-		<a href="/pacientes" class="btn btn-primary btn-lg btn-block">Pacientes</a>
+		<a href="/locales" class="btn btn-primary btn-lg btn-block">Locales</a>
+		<a href="/tareas" class="btn btn-primary btn-lg btn-block">Tareas</a>
 		<a href="/calendario" class="btn btn-primary btn-lg btn-block">Calendario</a>
 		<br />
     </div>
@@ -28,8 +28,8 @@
                   	<tr>
                   		<td>{{ tareas.tarea }}</td>
 						<td>{{ tareas.local }}</td>
-						<td>{{ tareas.fecha | date:"H:i" }}</td>							
-						<td>{{ tareas.observaciones }}</td>	
+						<td>{{ tareas.fecha | date:"H:i" }}</td>
+						<td>{{ tareas.observaciones }}</td>
                     </tr>
                   {% endfor %}
             </table>
