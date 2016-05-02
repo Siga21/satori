@@ -67,11 +67,13 @@ class tareas(models.Model):
     completada = models.BooleanField(null=False, blank=True, default=False)
     observaciones = models.TextField(default=None, null=True)
 
+    def get_absolute_url(self):
+		return reverse('index')
+		
     class Meta:
 	    verbose_name_plural = "tareas"
 
     def __unicode__(self):
     	return self.observaciones
 
-	def get_absolute_url(self):
-		return reverse('index')
+	
